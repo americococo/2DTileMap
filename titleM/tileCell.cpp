@@ -75,6 +75,11 @@ void tileCell::AddComponent(Component * com,bool isrender)
 {
 	_componentList.push_back(com);
 
+	if (eComponentType::CT_TILE_OBJECT == com->GetType())
+	{
+		_distanceWeigth = ((TileObject*)com)->GetDistanceWeigth();
+	}
+
 	if (isrender)
 	{
 		_renderList.push_back(com);

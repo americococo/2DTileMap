@@ -129,11 +129,27 @@ void Map::init()
 					for (int x = 0; x < _width; x++)
 					{
 						int index = atoi(token);
+
 						tileCell* tilecell = new tileCell(x,row);
 						WCHAR componetName[256];
 						wsprintf(componetName, L"MapData_layer1_%d_%d", line, x);
 						//tileobject가 컴퍼넘프 추가
 						TileObject * tileObject = new TileObject(componetName, _spriteList[index],x,row);
+
+						//test
+						switch (index)
+						{
+						case 238: //2
+							tileObject->setDistanceWeight(2.0f);
+							break;
+						case 50: //.5
+							tileObject->setDistanceWeight(0.1f);
+							break;
+						case 23:
+							tileObject->setDistanceWeight(1.0f);
+							break;
+						}
+
 						tileObject->setCanMove(true);
 						tilecell->AddComponent(tileObject, true);
 						rowList.push_back(tilecell);

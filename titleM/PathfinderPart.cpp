@@ -34,10 +34,12 @@ void PathfinderPart::CreateComponents(std::wstring mapName)
 		PathfinderMonster * _monster = new PathfinderMonster(name, L"monster", L"character_sprite2");
 		_stage->AddStageComponent(_monster);
 		
+		_monster->initTilePostion(1, 1);
 
 	//1개의 길찾기 전용 플레이어 생성
 	player * _player = new PathfinderPlayer(L"player", L"player", L"player");
 	_stage->AddStageComponent(_player);
+	_player->initTilePostion(23, 23);
 
 	TilePosition monsterPosition;
 	monsterPosition.x =_monster->getTileX();

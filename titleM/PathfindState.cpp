@@ -101,9 +101,12 @@ void PathfindState::UpdatePathfinding()
 				{
 					float distanceFromStart = tilecell->getDistanceFromStart()  + tilecell->getDistanceWeight();
 
+					float heuristic = CalcSimpleHeyristic(tilecell,nextTileCell,_targetTileCell);
+
 					if (NULL == nextTileCell->GetPrevPathfindingCell())
 					{
 						nextTileCell->SetDistanceFromStart(distanceFromStart);
+						nextTileCell->SetHeyrstic(heuristic);
 						nextTileCell->SetPrevPathfindingCell(tilecell);
 						_pathfingTileQueue.push(nextTileCell);
 
@@ -112,19 +115,19 @@ void PathfindState::UpdatePathfinding()
 						if ((nextTileCell->GetTileX() != _targetTileCell->GetTileX() || nextTileCell->GetTileY() != _targetTileCell->GetTileY())
 							&& (nextTileCell->GetTileX() != _charcter->getTileX() || nextTileCell->GetTileY() != _charcter->getTileY()))
 						{
-							GameSystem::GetInstance()->getStage()->CreatePathfinderNPC(nextTileCell);
+							//GameSystem::GetInstance()->getStage()->CreatePathfinderNPC(nextTileCell);
 						}
 					}
-					else
-					{
-						if (distanceFromStart < nextTileCell->getDistanceFromStart())
-						{
-							//다시검사
-							nextTileCell->SetDistanceFromStart(distanceFromStart);
-							nextTileCell->SetPrevPathfindingCell(tilecell);
-							_pathfingTileQueue.push(nextTileCell);
-						}
-					}
+					//else
+					//{
+					//	if (distanceFromStart < nextTileCell->getDistanceFromStart())
+					//	{
+					//		//다시검사
+					//		nextTileCell->SetDistanceFromStart(distanceFromStart);
+					//		nextTileCell->SetPrevPathfindingCell(tilecell);
+					//		_pathfingTileQueue.push(nextTileCell);
+					//	}
+					//}
 				}
 			}
 		}
@@ -198,4 +201,65 @@ void PathfindState::Stop()
 		_pathfingTileQueue.pop();
 	}
 
+}
+float PathfindState::CalcSimpleHeyristic(tileCell* tilecell, tileCell* nextTileCell, tileCell* _targetTileCell)
+{
+	float heuristic = 0.0f;
+
+	int diffFromCurrent = 0;
+	int diffFromNext = 0;
+
+	//x :발견적값 갱신
+	{
+		diffFromCurrent= tilecell->GetTileX()-_targetTileCell->GetTileX();
+		if (diffFromCurrent < 0) diffFromCurrent = -diffFromCurrent;
+		
+		diffFromNext =nextTileCell->GetTileX() - _targetTileCell->GetTileX();
+		if (diffFromNext < 0)diffFromNext = -diffFromNext;
+
+		if (diffFromNext < diffFromCurrent)
+		{
+			heuristic -= 1.0f;
+		}
+		else if (diffFromNext > diffFromCurrent)
+		{
+			heuristic += 1.0f;
+		}
+
+	}
+	
+	//y :발견적값 누적 갱신
+	{
+		diffFromCurrent = tilecell->GetTileY() - _targetTileCell->GetTileY();
+		if (diffFromCurrent < 0) diffFromCurrent = -diffFromCurrent;
+
+		diffFromNext = nextTileCell->GetTileY() - _targetTileCell->GetTileY();
+		if (diffFromNext < 0)diffFromNext = -diffFromNext;
+
+		if (diffFromNext < diffFromCurrent)
+		{
+			heuristic -= 1.0f;
+		}
+
+		else if (diffFromNext > diffFromCurrent)
+		{
+			heuristic += 1.0f;
+		}
+	}
+
+	//if (nextTileCell->getDistanceWeight() < tilecell->getDistanceWeight())
+	//{
+	//	heuristic -= 1.0f;
+	//}
+	//else if (nextTileCell->getDistanceWeight() > tilecell->getDistanceWeight())
+	//{
+	//	heuristic += 1.0f;
+	//}
+
+	heuristic += nextTileCell->getDistanceWeight() - tilecell->getDistanceWeight();
+
+	
+
+	return heuristic;
+		
 }

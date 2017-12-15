@@ -57,7 +57,7 @@ private:
 	float _distanceFromStart;//계산된 거리를 저장하기위한 변수
 
 public:
-	void initPathfinding() { _isPathfinderMark = false; _prevPathfindingCell = NULL; _distanceFromStart = 0.0f; }
+	void initPathfinding() { _isPathfinderMark = false; _prevPathfindingCell = NULL; _distanceFromStart = 0.0f; _heuryStic = 0.0f; }
 	bool IsPathfindMark() { return _isPathfinderMark; }
 	void PathFinded() { _isPathfinderMark = true; }
 
@@ -68,4 +68,11 @@ public:
 	float getDistanceFromStart() { return _distanceFromStart; }
 	void SetDistanceFromStart(float distanceFromStart) { _distanceFromStart = distanceFromStart; }
 	float getDistanceWeight() { return _distanceWeigth; }
+
+
+private:
+	float _heuryStic;
+public:
+	float getHeuriStic() { return _heuryStic; }
+	void SetHeyrstic(float Heurstic) { _heuryStic = Heurstic; }
 };

@@ -28,7 +28,8 @@ public:
 	{
 		bool operator()(tileCell * a, tileCell * b)
 		{
-			return a->getDistanceFromStart() > b->getDistanceFromStart();
+			//return a->getDistanceFromStart() > b->getDistanceFromStart();
+			return a->getHeuriStic() > b->getHeuriStic();
 		}
 	};
 
@@ -48,5 +49,7 @@ public:
 	void UpdateBuildPath();
 
 
+
+	float CalcSimpleHeyristic(tileCell* tilecell, tileCell* nextTileCell, tileCell* _targetTileCell);
 };
 
