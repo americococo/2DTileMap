@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\graphic">
+      <UniqueIdentifier>{ad63c934-21a8-4c6d-97a1-f7ba335b713b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\graphic\Sprite">
+      <UniqueIdentifier>{08a2cb96-5f44-444c-8738-39c12675f216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\graphic\Frame">
+      <UniqueIdentifier>{2986437c-03c0-49c9-bb1c-39af730bac09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\graphic\Texture">
+      <UniqueIdentifier>{1bc7b85f-6bd6-413e-bc6c-92be0cb9a655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ResourceManger">
+      <UniqueIdentifier>{5a0f9bd4-09dc-41f6-bd5e-00d17b123dcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\System">
+      <UniqueIdentifier>{546db112-aa87-454a-b089-e21ea02aa54c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\System\ComponentSystem">
+      <UniqueIdentifier>{47a26877-2ca4-4fe9-a299-947e2c9a4b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\System\GameSystem%28싱글턴%29">
+      <UniqueIdentifier>{a009d929-f61b-4695-a27a-36c51544011d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game">
+      <UniqueIdentifier>{25457026-925a-40a3-9e42-3cc6de187a00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Map">
+      <UniqueIdentifier>{7c473bbf-4653-4c9c-8d7d-6fb38f6a0649}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Charcter">
+      <UniqueIdentifier>{e3fb1980-1849-40a1-8af3-5754137afbb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Component">
+      <UniqueIdentifier>{8f16c611-7218-4488-b284-e8542f7d0246}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\System\GameTimer">
+      <UniqueIdentifier>{eff64099-85b6-45d1-8878-8e4bcce8856b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Charcter\Npc">
+      <UniqueIdentifier>{8042c96a-2849-4d7d-8699-37c7eafb21c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Charcter\Player">
+      <UniqueIdentifier>{3a2a5acc-47aa-4314-a6ee-c24fd0fad548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Charcter\Monster">
+      <UniqueIdentifier>{ff1c318a-0c37-4e3c-97cb-fde6cbd463d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Charcter\Charcter">
+      <UniqueIdentifier>{8910cdeb-bf3a-4130-aae6-34356fa30453}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\State">
+      <UniqueIdentifier>{4b6d1446-ff37-4541-a139-b57c20752736}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\State\Attack">
+      <UniqueIdentifier>{ad7a00a0-7a9f-4b85-8a20-259996a72de2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\State\Deffens">
+      <UniqueIdentifier>{1ef4f5dd-8a8d-4254-b5ad-a7a8f120db6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\State\Idile">
+      <UniqueIdentifier>{0254f1bb-ce01-4385-913a-f8d5a812e12e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\State\Move">
+      <UniqueIdentifier>{66d0bd07-4671-4d2e-a07d-9755ea642480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\State\Dead">
+      <UniqueIdentifier>{561e37ec-cd47-48c8-9d2c-2ebd2a89188c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\State\State">
+      <UniqueIdentifier>{cf2eaac1-dabd-45e7-8b0e-8d56fa768ecc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\graphic\Font">
+      <UniqueIdentifier>{f587b7d9-c58d-4464-bad7-9b7ef4a56811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Item">
+      <UniqueIdentifier>{ff6ea25a-5388-4a48-ab03-a3c125f53226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Stage">
+      <UniqueIdentifier>{2d01ee74-aa70-411f-8832-c8ec3227cf2f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSystem.cpp">
+      <Filter>소스 파일\System\GameSystem%28싱글턴%29</Filter>
+    </ClCompile>
+    <ClCompile Include="gameTimer.cpp">
+      <Filter>소스 파일\System\GameTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>소스 파일\graphic\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Frame.cpp">
+      <Filter>소스 파일\graphic\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>소스 파일\graphic\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>소스 파일\ResourceManger</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>소스 파일\Game\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>소스 파일\Game\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentSystem.cpp">
+      <Filter>소스 파일\System\ComponentSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="tileCell.cpp">
+      <Filter>소스 파일\Game\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>소스 파일\Game\Charcter\Npc</Filter>
+    </ClCompile>
+    <ClCompile Include="TileObject.cpp">
+      <Filter>소스 파일\Game\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>소스 파일\Game\Charcter\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackState.cpp">
+      <Filter>소스 파일\Game\State\Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="DeffensState.cpp">
+      <Filter>소스 파일\Game\State\Deffens</Filter>
+    </ClCompile>
+    <ClCompile Include="IdileState.cpp">
+      <Filter>소스 파일\Game\State\Idile</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveState.cpp">
+      <Filter>소스 파일\Game\State\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="DeadState.cpp">
+      <Filter>소스 파일\Game\State\Dead</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>소스 파일\Game\State\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>소스 파일\Game\Charcter\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Charcter.cpp">
+      <Filter>소스 파일\Game\Charcter\Charcter</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>소스 파일\graphic\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="RecoveryItem.cpp">
+      <Filter>소스 파일\Game\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="poisonItem.cpp">
+      <Filter>소스 파일\Game\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeTileObject.cpp">
+      <Filter>소스 파일\Game\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="LifePlayer.cpp">
+      <Filter>소스 파일\Game\Charcter\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="DeafultPart.cpp">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfinderPart.cpp">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfinderPlayer.cpp">
+      <Filter>소스 파일\Game\Charcter\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="StagePart.cpp">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeStagePart.cpp">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfinderMonster.cpp">
+      <Filter>소스 파일\Game\Charcter\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfindState.cpp">
+      <Filter>소스 파일\Game\State</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalType.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LifeNPC.cpp">
+      <Filter>소스 파일\Game\Charcter\Npc</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfindingMovingState.cpp">
+      <Filter>소스 파일\Game\State</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameSystem.h">
+      <Filter>소스 파일\System\GameSystem%28싱글턴%29</Filter>
+    </ClInclude>
+    <ClInclude Include="gameTimer.h">
+      <Filter>소스 파일\System\GameTimer</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>소스 파일\graphic\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Frame.h">
+      <Filter>소스 파일\graphic\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>소스 파일\graphic\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>소스 파일\ResourceManger</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>소스 파일\Game\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>소스 파일\Game\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentSystem.h">
+      <Filter>소스 파일\System\ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="tileCell.h">
+      <Filter>소스 파일\Game\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>소스 파일\Game\Charcter\Npc</Filter>
+    </ClInclude>
+    <ClInclude Include="TileObject.h">
+      <Filter>소스 파일\Game\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>소스 파일\Game\Charcter\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentMessage.h">
+      <Filter>소스 파일\System\ComponentSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackState.h">
+      <Filter>소스 파일\Game\State\Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="DeffensState.h">
+      <Filter>소스 파일\Game\State\Deffens</Filter>
+    </ClInclude>
+    <ClInclude Include="IdileState.h">
+      <Filter>소스 파일\Game\State\Idile</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveState.h">
+      <Filter>소스 파일\Game\State\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="DeadState.h">
+      <Filter>소스 파일\Game\State\Dead</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>소스 파일\Game\State\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>소스 파일\Game\Charcter\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Charcter.h">
+      <Filter>소스 파일\Game\Charcter\Charcter</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>소스 파일\graphic\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="RecoveryItem.h">
+      <Filter>소스 파일\Game\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="poisonItem.h">
+      <Filter>소스 파일\Game\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeTileObject.h">
+      <Filter>소스 파일\Game\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="LifePlayer.h">
+      <Filter>소스 파일\Game\Charcter\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="DeafultPart.h">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfinderPart.h">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfinderPlayer.h">
+      <Filter>소스 파일\Game\Charcter\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="StagePart.h">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeStagePart.h">
+      <Filter>소스 파일\Game\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfinderMonster.h">
+      <Filter>소스 파일\Game\Charcter\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfindState.h">
+      <Filter>소스 파일\Game\State</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalType.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeNPC.h">
+      <Filter>소스 파일\Game\Charcter\Npc</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfindingMovingState.h">
+      <Filter>소스 파일\Game\State</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Testcharacter_Right.json">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="Testcharacter_Up.json">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="Testcharacter_Down.json">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="Testcharacter_Left.json">
+      <Filter>리소스 파일</Filter>
+    </None>
+  </ItemGroup>
+</Project>
