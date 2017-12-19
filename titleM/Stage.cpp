@@ -112,7 +112,7 @@ void Stage::UpdateCreateCompoentList()
 	{
 		Component * baseComponent=(*itr);
 
-		LifeNPC * npc = (LifeNPC*)(_loader->CreateLifeNPC(L"npc", L"character_sprite2"));
+		LifeNPC * npc = (LifeNPC*)(_loader->CreateLifeNPC(L"npc", L"npc"));
 
 		npc->initTilePostion(baseComponent->getTileX(), baseComponent->getTileY());
 		
@@ -143,7 +143,7 @@ void Stage::CreatePathfinderNPC(tileCell * tilecell)
 	StagePart * load;
 	load = GetStageParts(L"lifeGame");
 
-	LifeNPC * npc = (LifeNPC*)(load->CreateLifeNPC(L"npc", L"character_sprite2"));
+	LifeNPC * npc = (LifeNPC*)(load->CreateLifeNPC(L"monster", L"monster"));
 	npc->initTilePostion(tilecell->GetTileX(), tilecell->GetTileY());
 	npc->setCanMove(true);
 
@@ -171,7 +171,7 @@ void Stage::CreatePathfindingMark(tileCell * tilecell)
 	StagePart * load;
 	load = GetStageParts(L"lifeGame");
 
-	LifeNPC * npc = (LifeNPC*)(load->CreateLifeNPC(L"monster", L"character_sprite2"));
+	LifeNPC * npc = (LifeNPC*)(load->CreateLifeNPC(L"monster", L"npc"));
 	npc->initTilePostion(tilecell->GetTileX(), tilecell->GetTileY());
 	npc->setCanMove(true);
 	_compoentList.remove(npc);

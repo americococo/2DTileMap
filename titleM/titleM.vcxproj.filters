@@ -327,18 +327,4 @@
       <Filter>소스 파일\Game\State</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Testcharacter_Right.json">
-      <Filter>리소스 파일</Filter>
-    </None>
-    <None Include="Testcharacter_Up.json">
-      <Filter>리소스 파일</Filter>
-    </None>
-    <None Include="Testcharacter_Down.json">
-      <Filter>리소스 파일</Filter>
-    </None>
-    <None Include="Testcharacter_Left.json">
-      <Filter>리소스 파일</Filter>
-    </None>
-  </ItemGroup>
 </Project>

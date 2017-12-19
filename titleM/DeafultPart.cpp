@@ -40,7 +40,7 @@ void DeafultPart::CreateComponents(std::wstring mapName)
 	{
 		WCHAR name[256];
 		wsprintf(name, L"npc_%d", i);
-		Charcter * _npc = new NPC(name, L"npc", L"character_sprite2");
+		Charcter * _npc = new NPC(name, L"npc", L"npc");
 		_stage->AddStageComponent(_npc);
 	}
 
@@ -49,7 +49,7 @@ void DeafultPart::CreateComponents(std::wstring mapName)
 	{
 		WCHAR name[256];
 		wsprintf(name, L"monster_%d", i);
-		Charcter * _monster = new Monster(name, L"monster", L"character_sprite2");
+		Charcter * _monster = new Monster(name, L"monster", L"monster");
 		_stage->AddStageComponent(_monster);
 	}
 

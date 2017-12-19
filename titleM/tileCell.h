@@ -73,6 +73,7 @@ public:
 private:
 	float _heuryStic;
 public:
-	float getHeuriStic() { return _heuryStic; }
 	void SetHeyrstic(float Heurstic) { _heuryStic = Heurstic; }
+	float getHeuriStic() { return _heuryStic; }
+	
 };

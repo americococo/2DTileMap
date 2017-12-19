@@ -225,12 +225,6 @@
     <ClInclude Include="tileCell.h" />
     <ClInclude Include="TileObject.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Testcharacter_Down.json" />
-    <None Include="Testcharacter_Left.json" />
-    <None Include="Testcharacter_Right.json" />
-    <None Include="Testcharacter_Up.json" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

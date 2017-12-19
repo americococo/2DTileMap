@@ -86,8 +86,6 @@ void Charcter::InitState()
 void Charcter::init(int tilex, int tiley)
 {
 	{
-		//Map* map = (Map*)ComponentSystem::GetInstance()->FindComponent();
-
 		Map* map = GameSystem::GetInstance()->getStage()->getMap();
 
 		_tileX = tilex;
@@ -279,7 +277,7 @@ float Charcter::getMoveTime()
 void Charcter::MoveStop()
 {
 	_isMoving = false;
-	//Map* map = (Map*)ComponentSystem::GetInstance()->FindComponent(L"TestMap");
+
 	Map* map = GameSystem::GetInstance()->getStage()->getMap();
 	_x = map->GetPositionX(_tileX, _tileY);
 	_y = map->GetPositionY(_tileX, _tileY);

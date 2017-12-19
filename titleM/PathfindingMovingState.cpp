@@ -25,7 +25,7 @@ void PathfindingMovingState::Start()
 {
 
 	State::Start();
-	Statename = L"Move";
+	Statename = L"AI_Move";
 
 	_nextState = eStateType::ET_NONE;
 	_movingDurtion = 0.0f;

@@ -28,7 +28,7 @@ void LifeStagePart::CreateComponents(std::wstring mapName)
 
 	for (int i = 0; i < 50;i++)
 	{
-		CreateLifeNPC(L"npc", L"character_sprite2");
+		CreateLifeNPC(L"npc", L"npc");
 	}
 	LifePlayer * _player = new LifePlayer(L"player", L"player", L"player");
 	_stage->AddStageComponent(_player);
