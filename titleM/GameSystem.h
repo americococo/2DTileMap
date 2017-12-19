@@ -57,7 +57,8 @@ private:
 public:
 	void CheckDeviceLost();
 
-
+public:
+	Stage * getStage() { return _stage; }
 	//get
 public:
 	int GetWidth();
@@ -79,8 +80,18 @@ public:
 
 	void InitInput();
 
+private:
+	bool _isMouseDown;
+	int _mouseX;
+	int _mouseY;
 
-	Stage * getStage() { return _stage; }
+public:
+	void mouseDown(int mouseX, int mouseY);
+	void mouseUp();
+
+	bool IsMouseDown() { return _isMouseDown; }
+	int GetMouseX() { return _mouseX; }
+	int GetMouseY() { return _mouseY; }
 
 private:
 
@@ -90,4 +101,7 @@ private:
 
 public:
 	bool IsKeyDown(unsigned int keycode);
+
+
+
 };

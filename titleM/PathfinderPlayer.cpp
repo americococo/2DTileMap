@@ -1,5 +1,7 @@
+#include"Stage.h"
+#include "Map.h"
 #include "PathfinderPlayer.h"
-
+#include "GameSystem.h"
 #include "State.h"
 #include "IdileState.h"
 #include "PathfindState.h"
@@ -14,7 +16,19 @@ PathfinderPlayer::~PathfinderPlayer()
 
 void PathfinderPlayer::UpdateAi(float deltTime)
 {
+	//mouse input Ã³¤©l
+	if(GameSystem::GetInstance()->IsMouseDown())
+	{
+		int mouseX = GameSystem::GetInstance()->GetMouseX();
+		int mouseY = GameSystem::GetInstance()->GetMouseY();
+		tileCell * targetTilecell = GameSystem::GetInstance()->getStage()->getMap()->FindTileCellWithMousePostion(mouseX, mouseY);
 
+		if (NULL != targetTilecell)
+		{
+			SetTargetTileCell(targetTilecell);
+		}
+
+	}
 }
 void PathfinderPlayer::InitState()
 {

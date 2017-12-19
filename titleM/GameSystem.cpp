@@ -8,14 +8,6 @@
 #include <string>
 
 #include "Stage.h"
-/*
-#include "Map.h"
-#include "RecoveryItem.h"
-#include "poisonItem.h"
-#include "NPC.h"
-#include "player.h"
-#include "Monster.h"
-*/
 #include "ComponentSystem.h"
 
 
@@ -26,8 +18,21 @@ GameSystem * GameSystem::_instance = 0;
 //윈도우 핸들, 이벤트,           부가적속성(이벤트별로 다름)
 LRESULT CALLBACK/*호출규약*/ WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
+	int mouseX;
+	int mouseY;
+
+
 	switch (msg)
 	{
+	case WM_LBUTTONDOWN:
+		mouseX = LOWORD(lParam);
+		mouseY = HIWORD(lParam);
+		GameSystem::GetInstance()->mouseDown(mouseX, mouseY);
+		return 0;
+
+	case WM_LBUTTONUP:
+		GameSystem::GetInstance()->mouseUp();
+		return 0;
 	case WM_KEYDOWN:
 		if (VK_ESCAPE == wParam)//이벤트의 부가적인 속성
 		{
@@ -46,7 +51,18 @@ LRESULT CALLBACK/*호출규약*/ WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM 
 
 	return DefWindowProc(hwnd, msg, wParam, lParam);
 }
+void GameSystem::mouseDown(int mouseX, int mouseY)
+{
+	_isMouseDown = true;
+	_mouseX = mouseX;
+	_mouseY = mouseY;
+}
 
+
+void GameSystem::mouseUp()
+{
+	_isMouseDown = false;
+}
 void GameSystem::KeyDown(unsigned int keycode)
 {
 	_keystate[keycode] = eKeyState::KEY_DOWN;
@@ -67,6 +83,7 @@ void GameSystem::InitInput()
 	{
 		_keystate[i] = eKeyState::KEY_UP;
 	}
+	_isMouseDown = false;
 }
 
 GameSystem * GameSystem::GetInstance()
@@ -185,7 +202,19 @@ bool GameSystem::InitSystem(HINSTANCE hInstance, int nCmdShow)
 		style = WS_OVERLAPPEDWINDOW;
 	}
 
-	hWnd = CreateWindow(L"Base", L"TitleName", style, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, 0, 0, hInstance, 0);
+	hWnd = CreateWindow(
+		L"Base",
+		L"TitleName",
+		style, 
+		CW_USEDEFAULT,
+		CW_USEDEFAULT, 
+		clientWidth, 
+		clientheight, 
+		0,
+		0, 
+		hInstance, 
+		0
+	);
 
 	if (0 == hWnd)
 		return false;

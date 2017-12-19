@@ -39,14 +39,14 @@ void PathfinderPart::CreateComponents(std::wstring mapName)
 	//1개의 길찾기 전용 플레이어 생성
 	player * _player = new PathfinderPlayer(L"player", L"player", L"player");
 	_stage->AddStageComponent(_player);
-	_player->initTilePostion(2, 2);
+	//_player->initTilePostion(2, 2);
 
 	TilePosition monsterPosition;
 	monsterPosition.x =_monster->getTileX();
 	monsterPosition.y = _monster->getTileY();
 
-	tileCell * targetCell = _stage->getMap()->getTileCell(monsterPosition);
-	_player->SetTargetTileCell(targetCell);
+	/*tileCell * targetCell = _stage->getMap()->getTileCell(monsterPosition);
+	_player->SetTargetTileCell(targetCell);*/
 	//뷰어 map 중간 타일로 지정
 
 	int midTileX = _stage->getMap()->Getwidth() / 2;

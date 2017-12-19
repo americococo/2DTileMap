@@ -19,6 +19,7 @@ void PathfindingMovingState::Init(Charcter * charcter)
 void PathfindingMovingState::Stop()
 {
 	State::Stop();
+	_charcter->ClearPathTileCellStack();
 }
 
 void PathfindingMovingState::Start()

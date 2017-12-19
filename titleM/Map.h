@@ -68,4 +68,6 @@ public:
 
 	//tileCell * getTileCell(int tileX, int tileY);
 	tileCell * getTileCell(TilePosition diretion);
+
+	tileCell * FindTileCellWithMousePostion(int mouseX,int mouseY);
 };

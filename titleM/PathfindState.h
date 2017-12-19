@@ -4,11 +4,6 @@
 #include "tileCell.h"
 //class tileCell;
 
-enum eUpdateState
-{
-	PATHFINDING,
-	BUILD_PATH
-};
 
 class PathfindState : public State
 {
@@ -22,21 +17,34 @@ public:
 
 	void Start();
 	void Stop();
-	
+
+public:
+	enum eUpdateState
+	{
+		PATHFINDING,
+		BUILD_PATH
+	};
+
+	typedef struct _sPathCommand
+	{
+		float heuristic;
+		tileCell * tilecell;
+	}sPathCommand;
+
 	//pathFinding
 	struct  compare
 	{
-		bool operator()(tileCell * a, tileCell * b)
+		bool operator()(sPathCommand&  a, sPathCommand&  b)
 		{
 			//return a->getDistanceFromStart() > b->getDistanceFromStart();
-			return a->getHeuriStic() > b->getHeuriStic();
+			return a.heuristic > b.heuristic;
 		}
 	};
 
 
 private:
 	//std::queue<tileCell*> _pathfingTileQueue;
-	std::priority_queue<tileCell*,std::vector<tileCell*>,compare> _pathfingTileQueue;
+	std::priority_queue<sPathCommand,std::vector<sPathCommand>,compare> _pathfingTileQueue;
 	tileCell * _targetTileCell;
 	
 	eUpdateState _updateState;

@@ -183,4 +183,5 @@ public:
 
 	std::stack<tileCell*> getPathTileCellStack() { return _pathTileCellStack; }
 	void PushTileCell(tileCell * tilecell) { _pathTileCellStack.push(tilecell); }
+	void ClearPathTileCellStack();
 };

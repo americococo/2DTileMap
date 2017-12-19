@@ -427,3 +427,49 @@ tileCell * Map::getTileCell(TilePosition diretion)
 {
 	return _tileMap[diretion.y][diretion.x];
 }
+tileCell * Map::FindTileCellWithMousePostion(int mouseX,int mouseY)
+{
+	int midX = GameSystem::GetInstance()->GetWidth() / 2;
+	int midY = GameSystem::GetInstance()->GetHeight() / 2;
+
+	int otter = 5;
+
+	int minX = _viewer->getTileX() - (midX / _tilesize) - otter;
+	int maxX = _viewer->getTileX() + (midX / _tilesize) + otter;
+
+	int minY = _viewer->getTileY() - (midY / _tilesize) - otter;
+	int maxY = _viewer->getTileY() + (midY / _tilesize) + otter;
+
+	//범위가 벗어날경우 보정
+	if (minX < 0)
+		minX = 0;
+
+	if (_width <= maxX)
+		maxX = _width;
+
+	if (minY < 0)
+		minY = 0;
+
+	if (_height <= maxY)
+		maxY = _height;
+
+	for (int y = minY; y < maxY; y++)
+	{
+		for (int x = minX; x < maxX; x++)
+		{
+			RECT rect;
+			rect.left = _tileMap[y][x]->GetPositionX() - _tilesize / 2.0f;
+			rect.right = rect.left + _tilesize;
+			rect.top = _tileMap[y][x]->GetPositionY() - _tilesize / 2.0f;
+			rect.bottom = rect.top + _tilesize;
+
+			if (rect.left <= mouseX && mouseX <= rect.right
+				&&rect.top <= mouseY && mouseY <= rect.bottom)
+			{
+				return _tileMap[y][x];
+			}
+
+		}
+	}
+
+}

@@ -376,3 +376,10 @@ void Charcter::SetTargetTileCell(tileCell * tilecell)
 	_targetTileCell = tilecell;
 	_state->NextState(eStateType::ET_PATHFINDING);
 }
+void Charcter::ClearPathTileCellStack()
+{
+	while (false == _pathTileCellStack.empty())
+	{
+		_pathTileCellStack.pop();
+	}
+}
