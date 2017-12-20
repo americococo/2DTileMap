@@ -51,7 +51,7 @@ void PathfindingMovingState::Update(float deltaTime)
 		_movingDurtion = 0.0f;
 
 		if (0 != _pathtileCellStack.size())
-			
+
 		{
 			tileCell * tilecell = _pathtileCellStack.top();
 			_pathtileCellStack.pop();
@@ -69,8 +69,40 @@ void PathfindingMovingState::Update(float deltaTime)
 			if (eDirection::NONE != dirtion)
 				_charcter->SetDirection(dirtion);
 
-			_charcter->MoveStart(tilecell->GetTileX(), tilecell->GetTileY());
-			_charcter->MoveStop();
+			//if (tilecell->canMove())
+			//{
+			//	_charcter->MoveStart(tilecell->GetTileX(), tilecell->GetTileY());
+			//	_charcter->MoveStop();
+			//}
+			//else
+			//{
+			//	std::list<Component*> colisionList;
+			//	Component * target = _charcter->Colision(colisionList);
+			//	if (NULL != target && _charcter->IsCoolDown())
+			//	{
+			//		_charcter->ResetCoolDown();
+			//		_charcter->SetTarget(target);
+			//		_nextState = eStateType::ET_ATTACK;
+			//	}
+			//}
+			if (tilecell->canMove())
+			{
+				_charcter->MoveStart(tilecell->GetTileX(), tilecell->GetTileY());
+				_charcter->MoveStop();
+			}
+			else
+			{
+				std::list<Component*> colisionList;
+				Component * target = _charcter->Colision(colisionList);
+				if (NULL != target && _charcter->IsCoolDown())
+				{
+					_charcter->ResetCoolDown();
+					_charcter->SetTarget(target);
+					_nextState = eStateType::ET_ATTACK;
+				}
+			}
+
+
 		}
 		else
 			_nextState = eStateType::ET_IDLE;

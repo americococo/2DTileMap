@@ -42,14 +42,14 @@ public:
 	};
 
 
-private:
+protected:
 	//std::queue<tileCell*> _pathfingTileQueue;
 	std::priority_queue<sPathCommand,std::vector<sPathCommand>,compare> _pathfingTileQueue;
 	tileCell * _targetTileCell;
 	
 	eUpdateState _updateState;
 
-private:
+protected:
 	tileCell * _reverseTilecell;
 
 public:

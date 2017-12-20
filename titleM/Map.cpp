@@ -463,13 +463,12 @@ tileCell * Map::FindTileCellWithMousePostion(int mouseX,int mouseY)
 			rect.top = _tileMap[y][x]->GetPositionY() - _tilesize / 2.0f;
 			rect.bottom = rect.top + _tilesize;
 
-			if (rect.left <= mouseX && mouseX <= rect.right
-				&&rect.top <= mouseY && mouseY <= rect.bottom)
-			{
+			if ((rect.left <= mouseX && mouseX <= rect.right)
+				&& (rect.top <= mouseY && mouseY <= rect.bottom))
 				return _tileMap[y][x];
-			}
 
+			
 		}
 	}
-
+	return NULL;
 }

@@ -71,13 +71,13 @@ void PathfindState::UpdatePathfinding()
 						tileCell * prev = command.tilecell->GetPrevPathfindingCell();
 
 						if (command.tilecell->GetTileX() < prev->GetTileX())
-							monster->SetDirection(eDirection::RIGHT);
+							_charcter->SetDirection(eDirection::RIGHT);
 						else if (prev->GetTileX() <command.tilecell->GetTileX())
-							monster->SetDirection(eDirection::LEFT);
+							_charcter->SetDirection(eDirection::LEFT);
 						else if (prev->GetTileY() < command.tilecell->GetTileY())
-							monster->SetDirection(eDirection::UP);
+							_charcter->SetDirection(eDirection::UP);
 						else if (command.tilecell->GetTileY() < prev->GetTileY())
-							monster->SetDirection(eDirection::DOWN);
+							_charcter->SetDirection(eDirection::DOWN);
 					}
 				}
 				OutputDebugString(L"Find Goal\n");
@@ -125,11 +125,11 @@ void PathfindState::UpdatePathfinding()
 						_pathfingTileQueue.push(newCommand);
 
 						//Å½»ö¹üÀ§ Å½»ö
-						if ((nextTileCell->GetTileX() != _targetTileCell->GetTileX() || nextTileCell->GetTileY() != _targetTileCell->GetTileY())
-							&& (nextTileCell->GetTileX() != _charcter->getTileX() || nextTileCell->GetTileY() != _charcter->getTileY()))
-						{
-							GameSystem::GetInstance()->getStage()->CreatePathfinderNPC(nextTileCell);
-						}
+						//if ((nextTileCell->GetTileX() != _targetTileCell->GetTileX() || nextTileCell->GetTileY() != _targetTileCell->GetTileY())
+						//	&& (nextTileCell->GetTileX() != _charcter->getTileX() || nextTileCell->GetTileY() != _charcter->getTileY()))
+						//{
+						//	GameSystem::GetInstance()->getStage()->CreatePathfinderNPC(nextTileCell);
+						//}
 					}
 
 					else
@@ -169,13 +169,14 @@ void PathfindState::UpdateBuildPath()
 		}
 		*/
 
-		GameSystem::GetInstance()->getStage()->CreatePathfindingMark(_reverseTilecell);
+		//GameSystem::GetInstance()->getStage()->CreatePathfindingMark(_reverseTilecell);
 		_charcter->PushTileCell(_reverseTilecell);
 		_reverseTilecell = _reverseTilecell->GetPrevPathfindingCell();
 		//_charcter->PushTileCell(_reverseTilecell);
 	}
 	else
 	{
+
 		_nextState = eStateType::ET_MOVE;
 	}
 	
