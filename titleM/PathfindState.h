@@ -61,4 +61,5 @@ public:
 	float CalcSimpleHeyristic(tileCell* tilecell, tileCell* nextTileCell, tileCell* _targetTileCell);//방향만 검사 현재 타일에서 목적지까지 방향
 	float CalcComplexcHeuristic(tileCell * nextTilecell,tileCell * targetTileCell); //목적지까지 거리
 	float CalcAStarHeuristic(float distanceFromStart, tileCell * nextTilecell, tileCell * targetTileCell);
+
 };

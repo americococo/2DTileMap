@@ -213,6 +213,9 @@
     <ClCompile Include="PathfindImmediateState.cpp">
       <Filter>소스 파일\Game\State</Filter>
     </ClCompile>
+    <ClCompile Include="RangeAtt.cpp">
+      <Filter>소스 파일\Game\State\Attack</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameSystem.h">
@@ -331,6 +334,9 @@
     </ClInclude>
     <ClInclude Include="PathfindImmediateState.h">
       <Filter>소스 파일\Game\State</Filter>
+    </ClInclude>
+    <ClInclude Include="RangeAtt.h">
+      <Filter>소스 파일\Game\State\Attack</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

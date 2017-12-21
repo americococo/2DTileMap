@@ -160,23 +160,14 @@ void PathfindState::UpdateBuildPath()
 {
 	if (NULL != _reverseTilecell)
 	{
-		/*
-		if (_reverseTilecell->GetTileX() != _targetTileCell->GetTileX()
-		|| _reverseTilecell->GetTileY() != _targetTileCell->GetTileY())
-		{
-			GameSystem::GetInstance()->getStage()->CreatePathfindingMark(_reverseTilecell);
-			_charcter->PushTileCell(_reverseTilecell);
-		}
-		*/
-
-		//GameSystem::GetInstance()->getStage()->CreatePathfindingMark(_reverseTilecell);
 		_charcter->PushTileCell(_reverseTilecell);
 		_reverseTilecell = _reverseTilecell->GetPrevPathfindingCell();
-		//_charcter->PushTileCell(_reverseTilecell);
+		
+		if (false == _reverseTilecell->canMove())
+			return;
 	}
 	else
 	{
-
 		_nextState = eStateType::ET_MOVE;
 	}
 	
@@ -224,11 +215,6 @@ void PathfindState::Start()
 void PathfindState::Stop()
 {
 	State::Stop();
-
-	//for (int i = 0; i < _pathfingTileQueue.size(); i++)
-	//{
-	//	_pathfingTileQueue.pop();
-	//}
 
 	while (false == _pathfingTileQueue.empty())
 	{

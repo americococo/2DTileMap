@@ -1,4 +1,4 @@
-#include "player.h"
+ï»¿#include "player.h"
 #include "GameSystem.h"
 #include "ComponentSystem.h"
 #include "Map.h"
@@ -7,6 +7,9 @@
 #include "AttackState.h"
 #include "DeffensState.h"
 #include "DeadState.h"
+#include "PathfindingMovingState.h"
+#include "PathfindState.h"
+#include "PathfindImmediateState.h"
 #include "Stage.h"
 #include "GlobalType.h"
 player::player(std::wstring name, std::wstring  scriptName, std::wstring  texutureName):Charcter(name,scriptName,texutureName)
@@ -48,7 +51,26 @@ void player::UpdateAi(float deltaTime)
 			_state->NextState(eStateType::ET_MOVE);
 		}
 
-		//½ºÆäÀÌ½º -> ¾ÆÀÌÅÛ 
+		//if (GameSystem::GetInstance()->IsMouseDown())
+		//{
+		//	int mouseX = GameSystem::GetInstance()->GetMouseX();
+		//	int mouseY = GameSystem::GetInstance()->GetMouseY();
+		//	tileCell * targetTilecell = GameSystem::GetInstance()->getStage()->getMap()->FindTileCellWithMousePostion(mouseX, mouseY);
+
+
+		//	if (NULL != targetTilecell)
+		//	{
+		//		SetTargetTileCell(targetTilecell);
+		//	}
+		//}
+
+
+		if (GameSystem::GetInstance()->IsKeyDown(VK_F10))
+		{
+			
+		}
+
+		//ìŠ¤í˜ì´ìŠ¤ -> ì•„ì´í…œ 
 		if (GameSystem::GetInstance()->IsKeyDown(VK_SPACE))
 		{
 			Map* map = GameSystem::GetInstance()->getStage()->getMap();
@@ -66,14 +88,14 @@ void player::UpdateAi(float deltaTime)
 				}
 			}
 
-			//³»°¡ ÀÖ´Â Å¸ÀÏ¿¡ ¾ÆÀÌÅÛ °Ë»ç
-			//¾ÆÀÌÅÛ ÀÖÀ¸¸é ¸Ê¿¡¼­ Á¦°Å
-			//Ã¼·ÂÃæÀü
+			//ë‚´ê°€ ìˆëŠ” íƒ€ì¼ì— ì•„ì´í…œ ê²€ì‚¬
+			//ì•„ì´í…œ ìˆìœ¼ë©´ ë§µì—ì„œ ì œê±°
+			//ì²´ë ¥ì¶©ì „
 
 
-			//³»°¡ ÀÖ´Â Å¸ÀÏ¿¡ ¾ÆÀÌÅÛ °Ë»ç
-			//¾ÆÀÌÅÛ ÀÖÀ¸¸é 
-			//¾ÆÀÌÅÛ¿¡ »ç¿ë ¸Ş¼¼Áö º¸³¿
+			//ë‚´ê°€ ìˆëŠ” íƒ€ì¼ì— ì•„ì´í…œ ê²€ì‚¬
+			//ì•„ì´í…œ ìˆìœ¼ë©´ 
+			//ì•„ì´í…œì— ì‚¬ìš© ë©”ì„¸ì§€ ë³´ëƒ„
 
 		}
 
@@ -101,4 +123,6 @@ void player::InitState()
 	ReplaceState(eStateType::ET_ATTACK, new AttackState());
 	ReplaceState(eStateType::ET_DEFFENS, new DeffensState());
 	ReplaceState(eStateType::ET_DEAD, new DeadState());
+
+	ReplaceState(eStateType::ET_PATHFINDING, new PathfindImmediateState());
 }

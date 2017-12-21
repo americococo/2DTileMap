@@ -5,8 +5,6 @@ PathfindImmediateState::~PathfindImmediateState() {}
 void PathfindImmediateState::Start()
 {
 	PathfindState::Start();
-
-
 	
 	while (0 != _pathfingTileQueue.size())
 	{
@@ -19,5 +17,4 @@ void PathfindImmediateState::Start()
 	{
 		UpdateBuildPath();
 	}
-
 }

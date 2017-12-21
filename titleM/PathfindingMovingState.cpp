@@ -51,7 +51,6 @@ void PathfindingMovingState::Update(float deltaTime)
 		_movingDurtion = 0.0f;
 
 		if (0 != _pathtileCellStack.size())
-
 		{
 			tileCell * tilecell = _pathtileCellStack.top();
 			_pathtileCellStack.pop();
@@ -69,30 +68,12 @@ void PathfindingMovingState::Update(float deltaTime)
 			if (eDirection::NONE != dirtion)
 				_charcter->SetDirection(dirtion);
 
-			//if (tilecell->canMove())
-			//{
-			//	_charcter->MoveStart(tilecell->GetTileX(), tilecell->GetTileY());
-			//	_charcter->MoveStop();
-			//}
-			//else
-			//{
-			//	std::list<Component*> colisionList;
-			//	Component * target = _charcter->Colision(colisionList);
-			//	if (NULL != target && _charcter->IsCoolDown())
-			//	{
-			//		_charcter->ResetCoolDown();
-			//		_charcter->SetTarget(target);
-			//		_nextState = eStateType::ET_ATTACK;
-			//	}
-			//}
-			if (tilecell->canMove())
+			Map* map = GameSystem::GetInstance()->getStage()->getMap();
+
+			std::list<Component*> colisionList;
+			bool canMove = map->getTileColisonList(tilecell->GetTileX(), tilecell->GetTileY(), colisionList);
+			if (false == canMove)
 			{
-				_charcter->MoveStart(tilecell->GetTileX(), tilecell->GetTileY());
-				_charcter->MoveStop();
-			}
-			else
-			{
-				std::list<Component*> colisionList;
 				Component * target = _charcter->Colision(colisionList);
 				if (NULL != target && _charcter->IsCoolDown())
 				{
@@ -100,6 +81,16 @@ void PathfindingMovingState::Update(float deltaTime)
 					_charcter->SetTarget(target);
 					_nextState = eStateType::ET_ATTACK;
 				}
+				else
+				{
+					_nextState = eStateType::ET_IDLE;
+				}
+			}
+			else
+			{
+				_charcter->MoveStart(tilecell->GetTileX(), tilecell->GetTileY());
+				_charcter->MoveStop();
+				_movingDurtion = 0.0f;
 			}
 
 

@@ -5,6 +5,7 @@
 class tileCell;
 class Charcter;
 
+
 class PathfindingMovingState : public State
 {
 public:

@@ -10,6 +10,7 @@
 
 PathfinderPlayer::PathfinderPlayer(std::wstring name, std::wstring  scriptName, std::wstring  texutureName):player(name,scriptName,texutureName)
 {
+	_attackedpoint = 1;
 }
 
 PathfinderPlayer::~PathfinderPlayer()
@@ -25,7 +26,6 @@ void PathfinderPlayer::UpdateAi(float deltTime)
 		int mouseY = GameSystem::GetInstance()->GetMouseY();
 		tileCell * targetTilecell = GameSystem::GetInstance()->getStage()->getMap()->FindTileCellWithMousePostion(mouseX, mouseY);
 
-		//std::list<tileCell*>::insert itr=
 
 		if (NULL != targetTilecell)
 		{

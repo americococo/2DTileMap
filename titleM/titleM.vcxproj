@@ -176,6 +176,7 @@
     <ClCompile Include="PathfindState.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="poisonItem.cpp" />
+    <ClCompile Include="RangeAtt.cpp" />
     <ClCompile Include="RecoveryItem.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -217,6 +218,7 @@
     <ClInclude Include="PathfindState.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="poisonItem.h" />
+    <ClInclude Include="RangeAtt.h" />
     <ClInclude Include="RecoveryItem.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Sprite.h" />
