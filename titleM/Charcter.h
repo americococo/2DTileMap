@@ -25,7 +25,7 @@ enum eStateType
 	ET_DEFFENS,
 	ET_DEAD,
 	ET_PATHFINDING,
-
+	ET_RANGEATT,
 	ET_NONE
 };
 

@@ -1,4 +1,4 @@
-#include "PathfindState.h"
+ï»¿#include "PathfindState.h"
 #include "GameSystem.h"
 #include "Map.h"
 #include "Stage.h"
@@ -23,7 +23,7 @@ void PathfindState::Update(float deltaTime)
 {
 	State::Update(deltaTime);
 
-	//Å¥¿¡ µé¾î°¡ÀÖ´Â ¼¿ "ÇÏ³ª¾¿"! Å½»ö
+	//íì— ë“¤ì–´ê°€ìˆëŠ” ì…€ "í•˜ë‚˜ì”©"! íƒìƒ‰
 
 	if (eStateType::ET_NONE != _nextState)
 	{
@@ -44,7 +44,7 @@ void PathfindState::UpdatePathfinding()
 {
 	if (0 != _pathfingTileQueue.size())
 	{
-		//Å¥¿¡ Ã³À½ °ªÀ» »© °Ë»ç
+		//íì— ì²˜ìŒ ê°’ì„ ë¹¼ ê²€ì‚¬
 		//tileCell * tilecell = _pathfingTileQueue.top();
 		sPathCommand command = _pathfingTileQueue.top();
 		_pathfingTileQueue.pop();
@@ -54,11 +54,11 @@ void PathfindState::UpdatePathfinding()
 			command.tilecell->PathFinded();
 
 			wchar_t  tileCheck[256];
-			swprintf(tileCheck, L"find TileCell X:%d Y:%d\n Target TileCell X:%d Y:%d\n", command.tilecell->GetTileX(), command.tilecell->GetTileY(), _charcter->getTargetTileCell()->GetTileX(), _charcter->getTargetTileCell()->GetTileY());
+			swprintf(tileCheck, L"find TileCell X:%d Y:%d\nTarget TileCell X:%d Y:%d\n", command.tilecell->GetTileX(), command.tilecell->GetTileY(), _charcter->getTargetTileCell()->GetTileX(), _charcter->getTargetTileCell()->GetTileY());
 			OutputDebugString(tileCheck);
 
 
-			//¸ñÇ¥Å¸ÀÏ -> Á¾·á
+			//ëª©í‘œíƒ€ì¼ -> ì¢…ë£Œ
 			if (command.tilecell->GetTileX() == _targetTileCell->GetTileX() && command.tilecell->GetTileY() == _targetTileCell->GetTileY())
 			{
 				std::list<Component*> com = _targetTileCell->GetComponentList();
@@ -96,7 +96,7 @@ void PathfindState::UpdatePathfinding()
 				Map * map = GameSystem::GetInstance()->getStage()->getMap();
 				tileCell * nextTileCell = map->getTileCell(nextTilePos);
 
-				//Àå¾Ö¹° Ã¼Å© Å½»öÇÑ ±æÀÎÁö Ã¼Å©
+				//ì¥ì• ë¬¼ ì²´í¬ íƒìƒ‰í•œ ê¸¸ì¸ì§€ ì²´í¬
 				if ((true == map->CanMoveTileMap(nextTilePos) && false == nextTileCell->IsPathfindMark()) ||
 					(nextTileCell->GetTileX() == _targetTileCell->GetTileX() && nextTileCell->GetTileY() == _targetTileCell->GetTileY()))
 				{
@@ -108,13 +108,13 @@ void PathfindState::UpdatePathfinding()
 
 					if (NULL == nextTileCell->GetPrevPathfindingCell())
 					{
-						//°Å¸®¿ì¼± Å½»ö - ÃÖ´Ü°Å¸® d ¸ğµç Å¸ÀÏ Å½»ö
+						//ê±°ë¦¬ìš°ì„  íƒìƒ‰ - ìµœë‹¨ê±°ë¦¬ d ëª¨ë“  íƒ€ì¼ íƒìƒ‰
 						nextTileCell->SetDistanceFromStart(distanceFromStart);
 
-						//¹ß°ßÀû Å½»ö - ¸ñÀûÁö±îÁö °Å¸® Å½»ö d ¸ñÀûÁö±îÁöÀÇ (°æ·ÎÀÇ °Å¸®) Áß¿ä½Ã x
+						//ë°œê²¬ì  íƒìƒ‰ - ëª©ì ì§€ê¹Œì§€ ê±°ë¦¬ íƒìƒ‰ d ëª©ì ì§€ê¹Œì§€ì˜ (ê²½ë¡œì˜ ê±°ë¦¬) ì¤‘ìš”ì‹œ x
 						nextTileCell->SetHeyrstic(heuristic);
 
-						//Å½»öµÈ °æ·ÎµéÀÇ °Å¸® ºñ±³
+						//íƒìƒ‰ëœ ê²½ë¡œë“¤ì˜ ê±°ë¦¬ ë¹„êµ
 
 						nextTileCell->SetPrevPathfindingCell(command.tilecell);
 
@@ -124,7 +124,7 @@ void PathfindState::UpdatePathfinding()
 						newCommand.tilecell = nextTileCell;
 						_pathfingTileQueue.push(newCommand);
 
-						//Å½»ö¹üÀ§ Å½»ö
+						//íƒìƒ‰ë²”ìœ„ íƒìƒ‰
 						//if ((nextTileCell->GetTileX() != _targetTileCell->GetTileX() || nextTileCell->GetTileY() != _targetTileCell->GetTileY())
 						//	&& (nextTileCell->GetTileX() != _charcter->getTileX() || nextTileCell->GetTileY() != _charcter->getTileY()))
 						//{
@@ -136,10 +136,10 @@ void PathfindState::UpdatePathfinding()
 					{
 						if (distanceFromStart < nextTileCell->getDistanceFromStart())
 						{
-							//´Ù½Ã°Ë»ç
+							//ë‹¤ì‹œê²€ì‚¬
 							nextTileCell->SetDistanceFromStart(distanceFromStart);
 							nextTileCell->SetPrevPathfindingCell(command.tilecell);
-							//nextTileCell->SetHeyrstic(new ff); <- Æ÷ÀÎÆ®°¡ µé¾î°£ÈÄ, Æ÷ÀÎÅÍ¿¡¼­ ºñ±³ ÇÏ´Â °ª Á¶ÀÛ, Å¥ °íÀå
+							//nextTileCell->SetHeyrstic(new ff); <- í¬ì¸íŠ¸ê°€ ë“¤ì–´ê°„í›„, í¬ì¸í„°ì—ì„œ ë¹„êµ í•˜ëŠ” ê°’ ì¡°ì‘, í ê³ ì¥
 
 							sPathCommand newCommand;
 							newCommand.heuristic = CalcAStarHeuristic(distanceFromStart,nextTileCell,_targetTileCell);
@@ -160,11 +160,10 @@ void PathfindState::UpdateBuildPath()
 {
 	if (NULL != _reverseTilecell)
 	{
+		//GameSystem::GetInstance()->getStage()->CreatePathfindingMark(_reverseTilecell);
 		_charcter->PushTileCell(_reverseTilecell);
 		_reverseTilecell = _reverseTilecell->GetPrevPathfindingCell();
 		
-		if (false == _reverseTilecell->canMove())
-			return;
 	}
 	else
 	{
@@ -179,8 +178,8 @@ void PathfindState::Start()
 
 	_targetTileCell = _charcter->getTargetTileCell();
 
-	//¸ğµç Å¸ÀÏ¼¿ ±æÃ£±â °ü·Ã ¼Ó¼º ÃÊ±âÈ­
-	//¸Ê¿¡ ±Ô¸ğ Å¬½Ã Æ¯Á¤»çÁ¤°Å¸®±îÁö¸¸ ÃÊ±âÈ­
+	//ëª¨ë“  íƒ€ì¼ì…€ ê¸¸ì°¾ê¸° ê´€ë ¨ ì†ì„± ì´ˆê¸°í™”
+	//ë§µì— ê·œëª¨ í´ì‹œ íŠ¹ì •ì‚¬ì •ê±°ë¦¬ê¹Œì§€ë§Œ ì´ˆê¸°í™”
 
 	Map * map = GameSystem::GetInstance()->getStage()->getMap();
 	int height = map->Getheight();
@@ -230,7 +229,7 @@ float PathfindState::CalcSimpleHeyristic(tileCell* tilecell, tileCell* nextTileC
 	int diffFromCurrent = 0;
 	int diffFromNext = 0;
 
-	//x :¹ß°ßÀû°ª °»½Å
+	//x :ë°œê²¬ì ê°’ ê°±ì‹ 
 	{
 		diffFromCurrent= tilecell->GetTileX()-_targetTileCell->GetTileX();
 		if (diffFromCurrent < 0) diffFromCurrent = -diffFromCurrent;
@@ -249,7 +248,7 @@ float PathfindState::CalcSimpleHeyristic(tileCell* tilecell, tileCell* nextTileC
 
 	}
 	
-	//y :¹ß°ßÀû°ª ´©Àû °»½Å
+	//y :ë°œê²¬ì ê°’ ëˆ„ì  ê°±ì‹ 
 	{
 		diffFromCurrent = tilecell->GetTileY() - _targetTileCell->GetTileY();
 		if (diffFromCurrent < 0) diffFromCurrent = -diffFromCurrent;
@@ -293,7 +292,7 @@ float PathfindState::CalcComplexcHeuristic(tileCell * nextTilecell, tileCell * t
 	distanceW *= distanceW;
 
 	float distance = (float)sqrtf((double)distanceH + (double)distanceW);
-	//distance = nextTilecell->getDistanceWeight();Å¸ÀÏÀÇ °¡ÁßÄ¡ + °Å¸® °¡ÁßÄ¡
+	//distance = nextTilecell->getDistanceWeight();íƒ€ì¼ì˜ ê°€ì¤‘ì¹˜ + ê±°ë¦¬ ê°€ì¤‘ì¹˜
 
 	return distance; 
 }

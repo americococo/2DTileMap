@@ -51,25 +51,6 @@ void player::UpdateAi(float deltaTime)
 			_state->NextState(eStateType::ET_MOVE);
 		}
 
-		//if (GameSystem::GetInstance()->IsMouseDown())
-		//{
-		//	int mouseX = GameSystem::GetInstance()->GetMouseX();
-		//	int mouseY = GameSystem::GetInstance()->GetMouseY();
-		//	tileCell * targetTilecell = GameSystem::GetInstance()->getStage()->getMap()->FindTileCellWithMousePostion(mouseX, mouseY);
-
-
-		//	if (NULL != targetTilecell)
-		//	{
-		//		SetTargetTileCell(targetTilecell);
-		//	}
-		//}
-
-
-		if (GameSystem::GetInstance()->IsKeyDown(VK_F10))
-		{
-			
-		}
-
 		//스페이스 -> 아이템 
 		if (GameSystem::GetInstance()->IsKeyDown(VK_SPACE))
 		{
@@ -124,5 +105,4 @@ void player::InitState()
 	ReplaceState(eStateType::ET_DEFFENS, new DeffensState());
 	ReplaceState(eStateType::ET_DEAD, new DeadState());
 
-	ReplaceState(eStateType::ET_PATHFINDING, new PathfindImmediateState());
 }

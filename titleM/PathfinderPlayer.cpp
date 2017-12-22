@@ -1,10 +1,12 @@
 #include"Stage.h"
 #include "Map.h"
-#include "PathfinderPlayer.h"
+
 #include "GameSystem.h"
 #include "State.h"
 #include "IdileState.h"
+#include "RangeAtt.h"
 #include "PathfindState.h"
+#include "PathfinderPlayer.h"
 #include "PathfindingMovingState.h"
 #include "PathfindImmediateState.h"
 
@@ -26,17 +28,24 @@ void PathfinderPlayer::UpdateAi(float deltTime)
 		int mouseY = GameSystem::GetInstance()->GetMouseY();
 		tileCell * targetTilecell = GameSystem::GetInstance()->getStage()->getMap()->FindTileCellWithMousePostion(mouseX, mouseY);
 
+		if ((targetTilecell->GetTileX() == _tileX) && (targetTilecell->GetTileY() == _tileY))
+			targetTilecell = NULL;
 
 		if (NULL != targetTilecell)
 		{
 			SetTargetTileCell(targetTilecell);
 		}
 	}
+
+	if (GameSystem::GetInstance()->IsKeyDown(VK_SPACE))
+	{
+		_state->NextState(eStateType::ET_RANGEATT);
+	}
 }
 void PathfinderPlayer::InitState()
 {
 	player::InitState();
 	ReplaceState(eStateType::ET_MOVE, new PathfindingMovingState());
-	//ReplaceState(eStateType::ET_ATTACK, new IdleState());
+	ReplaceState(eStateType::ET_RANGEATT, new RangeAtt());
 	ReplaceState(eStateType::ET_PATHFINDING, new PathfindImmediateState());
 }
