@@ -160,7 +160,7 @@ void PathfindState::UpdateBuildPath()
 {
 	if (NULL != _reverseTilecell)
 	{
-		//GameSystem::GetInstance()->getStage()->CreatePathfindingMark(_reverseTilecell);
+		GameSystem::GetInstance()->getStage()->CreatePathfindingMark(_reverseTilecell);
 		_charcter->PushTileCell(_reverseTilecell);
 		_reverseTilecell = _reverseTilecell->GetPrevPathfindingCell();
 		

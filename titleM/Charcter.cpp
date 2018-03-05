@@ -29,6 +29,8 @@ Charcter::Charcter(std::wstring name, std::wstring  scriptName, std::wstring  te
 	_attackCoolDownDuration = 0.0f;
 	_attackCoolDown = 1.0f;
 
+	
+
 }
 Charcter::~Charcter()
 {
@@ -74,6 +76,8 @@ void Charcter::init()
 
 	_font->SetRect(100, 100, 400, 100);
 	UpdateText();
+
+	level = 1;
 }
 void Charcter::InitState()
 {
@@ -358,6 +362,11 @@ void Charcter::UpdateAttackCoolDown(float deltaTime)
 void Charcter::UpdateText()
 {
 	int coolTime = (int)(_attackCoolDownDuration * 1000.0f);
+	coolTime -= (int)1000.0f;
+
+	if (coolTime < 0)
+		coolTime *= -1;
+
 	WCHAR text[256];
 	wsprintf(text, L"HP :%d\nCoolTime:%d\n\n state:%s", _hp, coolTime, _state->getStateName().c_str());
 	_font->setText(text);

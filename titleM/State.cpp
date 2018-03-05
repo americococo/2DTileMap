@@ -65,7 +65,7 @@ void State::CreateSprite()
 	WCHAR textureFileName[256];
 	WCHAR scriptFileName[256];
 
-	wsprintf(textureFileName, L"%s.png", _charcter->GetTextureFileName().c_str());
+	wsprintf(textureFileName, L"%s.png", _charcter->GetTextureFiFName().c_str());
 
 	//left
 	{

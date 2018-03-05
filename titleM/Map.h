@@ -70,4 +70,9 @@ public:
 	tileCell * getTileCell(TilePosition diretion);
 
 	tileCell * FindTileCellWithMousePostion(int mouseX,int mouseY);
+
+
+private:
+	void createMap();
+	
 };

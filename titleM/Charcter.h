@@ -1,6 +1,6 @@
 #pragma once
 #include <map>
-#include <d3dx9.h>
+//#include <d3dx9.h>
 #include "Component.h"
 #include <vector>
 #include <string>
@@ -25,7 +25,6 @@ enum eStateType
 	ET_DEFFENS,
 	ET_DEAD,
 	ET_PATHFINDING,
-	ET_RANGEATT,
 	ET_NONE
 };
 
@@ -45,7 +44,8 @@ public:
 	void Reset();
 
 
-	std::wstring GetTextureFileName() { return _textureName; }
+
+	std::wstring GetTextureFiFName() { return _textureName; }
 	std::wstring GetScriptFileName() { return _scriptName; }
 
 protected:
@@ -128,6 +128,7 @@ protected:
 	Component * _target;
 	int _attackpoint;
 
+	int level;
 
 public:
 	int getattackpoint();

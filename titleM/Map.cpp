@@ -30,37 +30,9 @@ void Map::DeInit()
 		}
 	}
 }
-void Map::init()
-{
-	/*
-	for (int y = 0; y < MAP_HEIGHT; y++)
-	{
-		for (int x = 0; x < MAP_WIDTH; x++)
-		{
-			Sprite * sprite;
-			int randValue = rand() % 4;
-			switch (randValue)
-			{
-			case 0:
-				sprite = new Sprite(L"character_sprite.png", L"character_sprite_01.json"); break;
-			case 1:
-				sprite = new Sprite(L"character_sprite.png", L"character_sprite_02.json"); break;
-			case 2:
-				sprite = new Sprite(L"character_sprite.png", L"character_sprite_03.json"); break;
-			case 3:
-				sprite = new Sprite(L"character_sprite.png", L"character_sprite_04.json"); break;
-			default:
-				break;
-			}
-			sprite->Init();
-			_testTiltleMap[x][y] = sprite;
-		}
-	}
-	*/
-	//맵용 스프트라이트 리스트 작업
 
-	//16x16 개의 타일 생성(32x32크기의 타일)
-	//찍을 인덱스 순서대로 리스트에 pushback
+void Map::createMap()
+{
 
 	int srcX = 0;
 	int srcY = 0;
@@ -100,7 +72,7 @@ void Map::init()
 	//1 layer load
 	{
 		int line = 0;
-		int row=0;
+		int row = 0;
 		char record[1024 * 4];
 		std::ifstream infile(layer01Name);
 		while (!infile.eof())
@@ -130,11 +102,11 @@ void Map::init()
 					{
 						int index = atoi(token);
 
-						tileCell* tilecell = new tileCell(x,row);
+						tileCell* tilecell = new tileCell(x, row);
 						WCHAR componetName[256];
 						wsprintf(componetName, L"MapData_layer1_%d_%d", line, x);
 						//tileobject가 컴퍼넘프 추가
-						TileObject * tileObject = new TileObject(componetName, _spriteList[index],x,row);
+						TileObject * tileObject = new TileObject(componetName, _spriteList[index], x, row);
 
 						//test
 						switch (index)
@@ -207,7 +179,7 @@ void Map::init()
 							else
 							{
 								//tileobject가 컴퍼넘프 추가
-								TileObject * tileObject = new TileObject(componetName, _spriteList[index],x,row);
+								TileObject * tileObject = new TileObject(componetName, _spriteList[index], x, row);
 								tileObject->setCanMove(false);
 								tilecell->AddComponent(tileObject, true);
 
@@ -224,6 +196,13 @@ void Map::init()
 		}
 
 	}
+}
+
+
+void Map::init()
+{
+	createMap();
+	//RandomMazeMap();
 
 }
 void Map::Update(float deltaTime)
@@ -250,7 +229,7 @@ void Map::Update(float deltaTime)
 		posX = _startX;
 		posY += _tilesize;
 	}
-	
+
 }
 void Map::render()
 {
@@ -427,7 +406,7 @@ tileCell * Map::getTileCell(TilePosition diretion)
 {
 	return _tileMap[diretion.y][diretion.x];
 }
-tileCell * Map::FindTileCellWithMousePostion(int mouseX,int mouseY)
+tileCell * Map::FindTileCellWithMousePostion(int mouseX, int mouseY)
 {
 	int midX = GameSystem::GetInstance()->GetWidth() / 2;
 	int midY = GameSystem::GetInstance()->GetHeight() / 2;

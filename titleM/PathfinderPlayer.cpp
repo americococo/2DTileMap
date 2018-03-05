@@ -4,7 +4,7 @@
 #include "GameSystem.h"
 #include "State.h"
 #include "IdileState.h"
-#include "RangeAtt.h"
+
 #include "PathfindState.h"
 #include "PathfinderPlayer.h"
 #include "PathfindingMovingState.h"
@@ -36,16 +36,10 @@ void PathfinderPlayer::UpdateAi(float deltTime)
 			SetTargetTileCell(targetTilecell);
 		}
 	}
-
-	if (GameSystem::GetInstance()->IsKeyDown(VK_SPACE))
-	{
-		_state->NextState(eStateType::ET_RANGEATT);
-	}
 }
 void PathfinderPlayer::InitState()
 {
 	player::InitState();
 	ReplaceState(eStateType::ET_MOVE, new PathfindingMovingState());
-	ReplaceState(eStateType::ET_RANGEATT, new RangeAtt());
 	ReplaceState(eStateType::ET_PATHFINDING, new PathfindImmediateState());
 }

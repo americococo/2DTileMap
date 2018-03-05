@@ -23,7 +23,7 @@
     <ProjectGuid>{F41967F5-5B97-4FDF-93E4-61B8CEE0D609}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>titleM</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>../SDK/Include/;../SDK/json;$(IncludePath)</IncludePath>
-    <LibraryPath>../SDK/Lib/x86;../SDK/json;$(LibraryPath)</LibraryPath>
+    <IncludePath>../../SDK/Include/;../../SDK/json;$(IncludePath)</IncludePath>
+    <LibraryPath>../../SDK/Lib/x86;../../SDK/json;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -176,7 +176,6 @@
     <ClCompile Include="PathfindState.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="poisonItem.cpp" />
-    <ClCompile Include="RangeAtt.cpp" />
     <ClCompile Include="RecoveryItem.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -218,7 +217,6 @@
     <ClInclude Include="PathfindState.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="poisonItem.h" />
-    <ClInclude Include="RangeAtt.h" />
     <ClInclude Include="RecoveryItem.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Sprite.h" />
