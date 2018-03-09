@@ -15,7 +15,7 @@ class Sprite;
 class State;
 class tileCell;
 
-
+struct EquipItem;
 
 enum eStateType
 {
@@ -136,11 +136,16 @@ public:
 	void ResetTarget();
 
 
+	void EquipWeapon(EquipItem equipItem);
+
+
 	//defens
 
 protected:
 	int _attackedpoint;
 
+public:
+	void durabilityReduction();
 
 public:
 	int getattackedpoint() { return _attackedpoint; }
@@ -155,7 +160,9 @@ protected:
 	float _attackCoolDownDuration;
 	float _attackCoolDown;
 
-
+private:
+	void CoolTimeReduction(float time);
+	int durability_weaponPoint;
 
 public:
 	void UpdateText();

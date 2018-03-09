@@ -23,6 +23,8 @@ void AttackState::Start()
 	msgParam.reciver = _charcter->getTarget();
 	ComponentSystem::GetInstance()->SendMsg(msgParam);
 
+	_charcter->durabilityReduction();
+
 	_nextState = eStateType::ET_IDLE;
 }
 void AttackState::Stop()

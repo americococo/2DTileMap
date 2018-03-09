@@ -13,6 +13,9 @@
 #include "Map.h"
 #include "GameSystem.h"
 
+
+#include "Equip_item.h"
+
 Charcter::Charcter(std::wstring name, std::wstring  scriptName, std::wstring  texture) : Component(name)
 {
 	_moveTime = 1.0f;
@@ -29,7 +32,7 @@ Charcter::Charcter(std::wstring name, std::wstring  scriptName, std::wstring  te
 	_attackCoolDownDuration = 0.0f;
 	_attackCoolDown = 1.0f;
 
-	
+	durability_weaponPoint = 0;
 
 }
 Charcter::~Charcter()
@@ -333,7 +336,22 @@ Component * Charcter::getTarget()
 void Charcter::ResetTarget()
 {
 	_target = NULL;
+	
 }
+
+void Charcter::EquipWeapon(EquipItem equipItem)
+{
+	_attackpoint += equipItem.atk;
+	CoolTimeReduction(equipItem.attSpeed);
+	durability_weaponPoint = equipItem.Durability;
+
+}
+void Charcter::durabilityReduction()
+{
+	if (durability_weaponPoint != 0)
+		durability_weaponPoint--;
+}
+
 bool Charcter::IsCoolDown()
 {
 	if (_attackCoolDown <= _attackCoolDownDuration)
@@ -359,16 +377,20 @@ void Charcter::UpdateAttackCoolDown(float deltaTime)
 	}
 }
 
+void Charcter::CoolTimeReduction(float time)
+{
+	if (time > 1.0f)
+		time = 1.0f;
+	_attackCoolDown -= time;
+}
+
 void Charcter::UpdateText()
 {
-	int coolTime = (int)(_attackCoolDownDuration * 1000.0f);
-	coolTime -= (int)1000.0f;
+	//= (int)(_attackCoolDownDuration * 1000.0f);
+	int coolTime=(int)(_attackCoolDownDuration*1000.0f) / (int)(_attackCoolDown*1000.0f);
 
-	if (coolTime < 0)
-		coolTime *= -1;
-
-	WCHAR text[256];
-	wsprintf(text, L"HP :%d\nCoolTime:%d\n\n state:%s", _hp, coolTime, _state->getStateName().c_str());
+	WCHAR text[128];
+	wsprintf(text, L"HP :%d\nCoolTime:%d\n state:%s\n WeaponPoint: %d", _hp, coolTime, _state->getStateName().c_str(),durability_weaponPoint);
 	_font->setText(text);
 }
 

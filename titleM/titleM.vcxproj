@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GlobalType.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="LifeStagePart.cpp" />
     <ClCompile Include="AttackState.cpp" />
     <ClCompile Include="Charcter.cpp" />
@@ -185,9 +186,12 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="tileCell.cpp" />
     <ClCompile Include="TileObject.cpp" />
+    <ClCompile Include="WeaponItem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Equip_item.h" />
     <ClInclude Include="GlobalType.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="LifeStagePart.h" />
     <ClInclude Include="AttackState.h" />
     <ClInclude Include="Charcter.h" />
@@ -226,6 +230,7 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="tileCell.h" />
     <ClInclude Include="TileObject.h" />
+    <ClInclude Include="WeaponItem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

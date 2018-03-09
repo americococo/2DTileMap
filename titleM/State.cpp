@@ -2,6 +2,7 @@
 #include "Sprite.h"
 #include "Charcter.h"
 #include "GlobalType.h"
+
 State::State() 
 {
 	

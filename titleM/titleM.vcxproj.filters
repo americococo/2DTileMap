@@ -94,6 +94,12 @@
     <Filter Include="소스 파일\Game\Stage">
       <UniqueIdentifier>{2d01ee74-aa70-411f-8832-c8ec3227cf2f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Game\State\PathFind">
+      <UniqueIdentifier>{87195403-14c1-4dad-8a43-3c053537fbdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Item\Equip_Item">
+      <UniqueIdentifier>{c8f95bcb-8d1e-4a74-a78c-e89146673372}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -198,20 +204,26 @@
     <ClCompile Include="PathfinderMonster.cpp">
       <Filter>소스 파일\Game\Charcter\Monster</Filter>
     </ClCompile>
-    <ClCompile Include="PathfindState.cpp">
-      <Filter>소스 파일\Game\State</Filter>
-    </ClCompile>
     <ClCompile Include="GlobalType.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="LifeNPC.cpp">
       <Filter>소스 파일\Game\Charcter\Npc</Filter>
     </ClCompile>
-    <ClCompile Include="PathfindingMovingState.cpp">
-      <Filter>소스 파일\Game\State</Filter>
-    </ClCompile>
     <ClCompile Include="PathfindImmediateState.cpp">
-      <Filter>소스 파일\Game\State</Filter>
+      <Filter>소스 파일\Game\State\PathFind</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfindingMovingState.cpp">
+      <Filter>소스 파일\Game\State\PathFind</Filter>
+    </ClCompile>
+    <ClCompile Include="PathfindState.cpp">
+      <Filter>소스 파일\Game\State\PathFind</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>소스 파일\Game\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponItem.cpp">
+      <Filter>소스 파일\Game\Item\Equip_Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -317,20 +329,29 @@
     <ClInclude Include="PathfinderMonster.h">
       <Filter>소스 파일\Game\Charcter\Monster</Filter>
     </ClInclude>
-    <ClInclude Include="PathfindState.h">
-      <Filter>소스 파일\Game\State</Filter>
-    </ClInclude>
     <ClInclude Include="GlobalType.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="LifeNPC.h">
       <Filter>소스 파일\Game\Charcter\Npc</Filter>
     </ClInclude>
-    <ClInclude Include="PathfindingMovingState.h">
-      <Filter>소스 파일\Game\State</Filter>
-    </ClInclude>
     <ClInclude Include="PathfindImmediateState.h">
-      <Filter>소스 파일\Game\State</Filter>
+      <Filter>소스 파일\Game\State\PathFind</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfindingMovingState.h">
+      <Filter>소스 파일\Game\State\PathFind</Filter>
+    </ClInclude>
+    <ClInclude Include="PathfindState.h">
+      <Filter>소스 파일\Game\State\PathFind</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>소스 파일\Game\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponItem.h">
+      <Filter>소스 파일\Game\Item\Equip_Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Equip_item.h">
+      <Filter>소스 파일\Game\Item\Equip_Item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

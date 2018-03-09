@@ -2,6 +2,8 @@
 
 #include "RecoveryItem.h"
 #include "poisonItem.h"
+#include "WeaponItem.h"
+
 #include "NPC.h"
 #include "player.h"
 #include "Monster.h"
@@ -32,9 +34,17 @@ void DeafultPart::CreateComponents(std::wstring mapName)
 	{
 		WCHAR name[256];
 		wsprintf(name, L"posion_item%d", i);
-		posionItem * item = new posionItem(name, L"recovery_item", L"item_sprites");
+		posionItem * item = new posionItem(name, L"Posion_item", L"item_sprites");
 		_stage->AddStageComponent(item);
 	}
+	for (int i = 0; i < 2; i++)
+	{
+		WCHAR name[256];
+		wsprintf(name, L"Weapon_item%d", i);
+		WeaponItem * item = new WeaponItem(name, L"Weapon_item", L"item_sprites");
+		_stage->AddStageComponent(item);
+	}
+
 
 	for (int i = 0; i < 3; i++)
 	{
@@ -52,6 +62,11 @@ void DeafultPart::CreateComponents(std::wstring mapName)
 		Charcter * _monster = new Monster(name, L"monster", L"monster");
 		_stage->AddStageComponent(_monster);
 	}
+
+
+
+
+
 
 	player * _player = new player(L"player", L"player", L"player");
 	_stage->AddStageComponent(_player);
