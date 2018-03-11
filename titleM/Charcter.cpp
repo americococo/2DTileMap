@@ -386,7 +386,6 @@ void Charcter::CoolTimeReduction(float time)
 
 void Charcter::UpdateText()
 {
-	//= (int)(_attackCoolDownDuration * 1000.0f);
 	int coolTime=(int)(_attackCoolDownDuration*1000.0f) / (int)(_attackCoolDown*1000.0f);
 
 	WCHAR text[128];

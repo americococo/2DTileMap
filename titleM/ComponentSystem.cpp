@@ -42,7 +42,7 @@ Component * ComponentSystem::FindComponent(std::wstring name)
 	}
 	return 0;
 }
-Component * ComponentSystem::FindComponentInRange(Component* mapComp,Component *  chaser, int range, std::vector<eComponentType>compareTpye)
+Component * ComponentSystem::FindComponentInRange(Component* mapComp, Component *  chaser, int range, std::vector<eComponentType>compareTpye)
 {
 	//Map * map = (Map*)FindComponent(L"TestMap");
 	Map * map = (Map*)mapComp;
@@ -117,7 +117,7 @@ void ComponentSystem::removeComponent(Component * tileCharcter)
 {
 	_componentMap.erase(tileCharcter->getName());
 	delete tileCharcter;
-	
+
 }
 void ComponentSystem::clearMessageQueue()
 {

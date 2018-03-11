@@ -1,4 +1,5 @@
-﻿  WeaponItem.cpp
+﻿  Charcter.cpp
+c:\users\a\documents\2dtilemap\titlem\globaltype.h(12): warning C4091: 'typedef ': 변수를 선언하지 않으면 'TilePosition' 왼쪽은 무시됩니다.
 c:\users\a\documents\sdk\include\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(53655): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
 c:\users\a\documents\sdk\include\dxgitype.h(13): warning C4005: 'DXGI_STATUS_CLIPPED': 매크로 재정의
@@ -55,9 +56,19 @@ c:\users\a\documents\sdk\include\d3d10.h(608): warning C4005: 'D3D10_ERROR_TOO_M
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54094): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
 c:\users\a\documents\sdk\include\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\winerror.h(54103): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
-c:\users\a\documents\projectfile\titlem\globaltype.h(12): warning C4091: 'typedef ': 변수를 선언하지 않으면 'TilePosition' 왼쪽은 무시됩니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(63): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(64): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(102): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(103): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(132): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(133): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(163): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(250): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(251): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(289): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\a\documents\2dtilemap\titlem\charcter.cpp(290): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 GlobalType.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/INCREMENTAL:NO' 사양으로 인해 무시됩니다.
-json_vc71_libmtd.lib(json_reader.obj) : warning LNK4099: 'lib_json.pdb' PDB를 'json_vc71_libmtd.lib(json_reader.obj)' 또는 'C:\Users\a\Documents\ProjectFile\Debug\lib_json.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-json_vc71_libmtd.lib(json_value.obj) : warning LNK4099: 'lib_json.pdb' PDB를 'json_vc71_libmtd.lib(json_value.obj)' 또는 'C:\Users\a\Documents\ProjectFile\Debug\lib_json.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-json_vc71_libmtd.lib(json_writer.obj) : warning LNK4099: 'lib_json.pdb' PDB를 'json_vc71_libmtd.lib(json_writer.obj)' 또는 'C:\Users\a\Documents\ProjectFile\Debug\lib_json.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-  titleM.vcxproj -> C:\Users\a\Documents\ProjectFile\Debug\titleM.exe
+json_vc71_libmtd.lib(json_reader.obj) : warning LNK4099: 'lib_json.pdb' PDB를 'json_vc71_libmtd.lib(json_reader.obj)' 또는 'C:\Users\a\Documents\2DTileMap\Debug\lib_json.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+json_vc71_libmtd.lib(json_value.obj) : warning LNK4099: 'lib_json.pdb' PDB를 'json_vc71_libmtd.lib(json_value.obj)' 또는 'C:\Users\a\Documents\2DTileMap\Debug\lib_json.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+json_vc71_libmtd.lib(json_writer.obj) : warning LNK4099: 'lib_json.pdb' PDB를 'json_vc71_libmtd.lib(json_writer.obj)' 또는 'C:\Users\a\Documents\2DTileMap\Debug\lib_json.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  titleM.vcxproj -> C:\Users\a\Documents\2DTileMap\Debug\titleM.exe

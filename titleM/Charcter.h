@@ -165,11 +165,11 @@ private:
 	int durability_weaponPoint;
 
 public:
-	void UpdateText();
+	virtual void UpdateText(); //LifeGame캐릭터를 위해 따라 재정의
 
 
 
-	//UI
+	//UI 
 protected:
 	//ID3DXFont * _dxTestFont;
 	Font * _font;

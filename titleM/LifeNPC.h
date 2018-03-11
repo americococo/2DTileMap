@@ -10,4 +10,7 @@ public:
 
 	void UpdateAi(float deltaTime);
 	void render();
+
+	void UpdateText() {}
+
 };
